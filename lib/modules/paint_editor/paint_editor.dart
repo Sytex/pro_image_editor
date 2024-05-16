@@ -55,6 +55,19 @@ class PaintingEditor extends StatefulWidget
     required this.initConfigs,
   });
 
+  factory PaintingEditor.fromEditorImage(
+    {
+    required EditorImage editorImage,
+    required PaintEditorInitConfigs initConfigs,
+    Key? key,
+  }) {
+    return PaintingEditor._(
+      key: key,
+      editorImage: editorImage,
+      initConfigs: initConfigs,
+    );
+  }
+
   /// Constructs a `PaintingEditor` widget with image data loaded from memory.
   factory PaintingEditor.memory(
     Uint8List byteArray, {

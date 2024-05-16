@@ -857,12 +857,9 @@ class ProImageEditorState extends State<ProImageEditor>
   /// After closing the painting editor, any changes made are applied to the image's layers.
   void openPaintingEditor() async {
     await _openPage<List<PaintingLayerData>>(
-      PaintingEditor.autoSource(
+      PaintingEditor.fromEditorImage(
         key: paintingEditor,
-        file: _stateManager.image.file,
-        byteArray: _stateManager.image.byteArray,
-        assetPath: _stateManager.image.assetPath,
-        networkUrl: _stateManager.image.networkUrl,
+        editorImage: _stateManager.image,
         initConfigs: PaintEditorInitConfigs(
           layers: activeLayers,
           theme: _theme,
