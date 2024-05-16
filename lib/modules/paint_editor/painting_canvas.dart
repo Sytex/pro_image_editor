@@ -184,7 +184,14 @@ class PaintingCanvasState extends State<PaintingCanvas> {
   /// Set the color for painting on the canvas.
   ///
   /// Use this method to set the color for painting. The [value] parameter should be an integer representing the color.
-  void setColor(int value) => {_paintCtrl.setColor(Color(value))};
+  void setColor(int value) {
+    final color = Color(value);
+    _paintCtrl.setColor(color);
+    setState(() {});
+    if (configs.strokeColorOnChanged != null) {
+      configs.strokeColorOnChanged!(color);
+    }
+  }
 
   /// Handles the start of a scaling gesture for painting.
 

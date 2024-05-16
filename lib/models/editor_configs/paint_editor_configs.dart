@@ -84,6 +84,9 @@ class PaintEditorConfigs {
 
   /// A callback function that will be called when the stroke width on changed.
   final Function(double x)? strokeWidthOnChanged;
+  
+  /// A callback function that will be called when the stroke color is changed.
+  final Function(Color color)? strokeColorOnChanged;
 
   /// Creates an instance of PaintEditorConfigs with optional settings.
   ///
@@ -107,5 +110,6 @@ class PaintEditorConfigs {
     this.initialColor = const Color(0xffff0000),
     this.initialPaintMode = PaintModeE.freeStyle,
     this.strokeWidthOnChanged,
+    this.strokeColorOnChanged,
   });
 }
